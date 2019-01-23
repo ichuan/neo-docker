@@ -1,4 +1,4 @@
-# http://docs.neo.org/zh-cn/exchange/v2.9.2.html
+# http://docs.neo.org/zh-cn/exchange/v2.9.4.html
 
 FROM debian:9
 
@@ -15,9 +15,9 @@ RUN apt-get update && apt-get install -y aspnetcore-runtime-2.1 libunwind-dev li
 
 # neo-cli
 WORKDIR /root
-RUN wget https://github.com/neo-project/neo-cli/releases/download/v2.9.2/neo-cli-linux-x64.zip && \
-  wget https://github.com/neo-project/neo-plugins/releases/download/v2.9.2/ApplicationLogs.zip && \
-  wget https://github.com/neo-project/neo-plugins/releases/download/v2.9.2/SimplePolicy.zip
+RUN wget https://github.com/neo-project/neo-cli/releases/download/v2.9.4/neo-cli-linux-x64.zip && \
+  wget https://github.com/neo-project/neo-plugins/releases/download/v2.9.4/ApplicationLogs.zip && \
+  wget https://github.com/neo-project/neo-plugins/releases/download/v2.9.4/SimplePolicy.zip
 RUN unzip neo-cli-linux-x64.zip && unzip -d neo-cli/ ApplicationLogs.zip && unzip -d neo-cli/ SimplePolicy.zip
 RUN sed -i 's/127.0.0.1/0.0.0.0/g' neo-cli/config.json
 EXPOSE 10332
