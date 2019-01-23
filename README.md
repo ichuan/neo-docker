@@ -4,13 +4,14 @@ Docker builds of neo chain
 ## Build
 
 ```
-docker build -t neo:2.9.2 .
+docker build -t neo .
 ```
 
 ## Run
 
 ```
-docker run --rm -it --name ineo -p 0.0.0.0:10332:10332 -v neo-data:/data neo:2.9.2
+mkdir data
+docker run --rm -it --name ineo -p 10332:10332 -v $PWD/data:/data neo
 
 # first time
 > create wallet /data/wallet.db3
@@ -32,5 +33,5 @@ docker volume create -d local-persist -o mountpoint=/data/neo --name=neo-data
 Using automated build image from <https://hub.docker.com/r/mixhq/neo/>:
 
 ```
-docker run --rm -it --name ineo -p 0.0.0.0:10332:10332 -v neo-data:/data mixhq/neo:2.9.2
+docker run --rm -it --name ineo -p 10332:10332 -v neo-data:/data mixhq/neo
 ```
