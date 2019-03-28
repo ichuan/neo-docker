@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y aspnetcore-runtime-2.1 libunwind-dev li
 WORKDIR /root
 RUN wget https://github.com/neo-project/neo-cli/releases/download/v2.10.0/neo-cli-linux-x64.zip && \
   wget https://github.com/neo-project/neo-plugins/releases/download/v2.10.0/ApplicationLogs.zip && \
+  wget https://github.com/neo-project/neo-plugins/releases/download/v2.10.0/ImportBlocks.zip && \
   wget https://github.com/neo-project/neo-plugins/releases/download/v2.10.0/SimplePolicy.zip
 RUN unzip neo-cli-linux-x64.zip && unzip -d neo-cli/ ApplicationLogs.zip && unzip -d neo-cli/ SimplePolicy.zip
 RUN sed -i 's/127.0.0.1/0.0.0.0/g' neo-cli/config.json
