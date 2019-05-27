@@ -19,6 +19,9 @@ docker run --rm -it --name ineo -p 10332:10332 -v $PWD/data:/data neo
 > open wallet /data/wallet.db3
 ```
 
+## Fast sync
+See <https://docs.neo.org/en-us/network/syncblocks.html>
+
 ## Using pre-built docker image
 
 Using automated build image from <https://hub.docker.com/r/mixhq/neo/>:
