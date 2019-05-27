@@ -1,4 +1,4 @@
-# http://docs.neo.org/zh-cn/exchange/v2.9.4.html
+# https://docs.neo.org/zh-cn/exchange/v2.10.2.html
 
 FROM debian:9
 
@@ -15,11 +15,11 @@ RUN apt-get update && apt-get install -y aspnetcore-runtime-2.1 libunwind-dev li
 
 # neo-cli
 WORKDIR /root
-RUN wget https://github.com/neo-project/neo-cli/releases/download/v2.10.0/neo-cli-linux-x64.zip && \
-  wget https://github.com/neo-project/neo-plugins/releases/download/v2.10.0/ApplicationLogs.zip && \
-  wget https://github.com/neo-project/neo-plugins/releases/download/v2.10.0/ImportBlocks.zip && \
-  wget https://github.com/neo-project/neo-plugins/releases/download/v2.10.0/RpcWallet.zip && \
-  wget https://github.com/neo-project/neo-plugins/releases/download/v2.10.0/SimplePolicy.zip
+RUN wget https://github.com/neo-project/neo-cli/releases/download/v2.10.2/neo-cli-linux-x64.zip && \
+  wget https://github.com/neo-project/neo-plugins/releases/download/v2.10.2/ApplicationLogs.zip && \
+  wget https://github.com/neo-project/neo-plugins/releases/download/v2.10.2/ImportBlocks.zip && \
+  wget https://github.com/neo-project/neo-plugins/releases/download/v2.10.2/RpcWallet.zip && \
+  wget https://github.com/neo-project/neo-plugins/releases/download/v2.10.2/SimplePolicy.zip
 RUN unzip neo-cli-linux-x64.zip && \
   unzip -d neo-cli/ ApplicationLogs.zip && \
   unzip -d neo-cli/ SimplePolicy.zip && \
